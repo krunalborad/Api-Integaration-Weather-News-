@@ -1,0 +1,171 @@
+# 🌦️ Weather & News Dashboard (API Integration Project)
+
+A modern multi-page dashboard application that integrates **Weather API** and **News API** to provide real-time weather updates, 5-day forecasts, and the latest news headlines.
+
+Built using **React (Frontend)** with live **REST API integration**, this project demonstrates asynchronous data fetching, routing, state management, and responsive UI design.
+
+🚀 Features
+
+👤 User Features
+
+Search weather by city
+View current temperature, humidity, wind speed, and conditions
+5-day weather forecast
+Latest news headlines
+Category-based news filtering
+Temperature unit toggle (°C / °F)
+Profile page for preferences
+Responsive dashboard layout
+Fast API-based updates
+
+🛠 Pages Overview
+
+🏠 Home Page
+- Current weather details
+- City search
+- Temperature, humidity, wind speed
+- Quick news headlines preview
+
+📅 Forecast Page
+- 5-day weather forecast
+- Daily temperature trends
+- Weather condition icons
+
+📰 News Page
+- Latest headlines
+- Category-wise filtering (Tech, Sports, Business, Health, etc.)
+- Real-time news updates
+- Clean card layout
+
+👤 Profile Page
+- Unit preference (°C / °F)
+- Personalized settings
+- Dashboard customization
+
+⚙ Core Functionalities
+
+🌦 Weather Module
+- Current weather data
+- Forecast weather data
+- City-based search
+- Unit conversion (°C/°F)
+- Live API integration
+
+📰 News Module
+- Top headlines
+- Category filtering
+- Real-time fetching
+- Dynamic updates
+
+🧰 Tech Stack
+
+Frontend
+
+React.js
+React Router DOM
+JavaScript (ES6+)
+HTML5
+CSS3
+
+API Integration
+
+OpenWeatherMap API
+NewsAPI
+
+Tools
+
+Fetch / Axios
+Vite / Create React App
+
+🔌 API Endpoints Used
+
+Weather
+
+GET /weather?q={city}
+→ Current weather
+
+GET /forecast?q={city}
+→ 5-day forecast
+
+News
+
+GET /top-headlines
+→ Latest news
+
+GET /top-headlines?category={type}
+→ Category news
+
+🧪 Demo Flow
+
+User opens homepage
+Searches city → views current weather
+Navigates to Forecast → sees 5-day forecast
+Navigates to News → reads latest headlines
+Goes to Profile → changes unit preference
+Dashboard updates dynamically
+
+▶️ How to Run Locally
+
+1️⃣ Clone Repository
+
+git clone https://github.com/your-username/weather-news-dashboard.git
+
+2️⃣ Install Dependencies
+
+cd frontend  
+npm install
+
+3️⃣ Add API Keys
+
+Create `.env` file:
+
+REACT_APP_WEATHER_API_KEY=your_key_here  
+REACT_APP_NEWS_API_KEY=your_key_here  
+
+4️⃣ Start App
+
+In Terminal
+
+frontend - npm start
+App runs at:
+http://localhost:3000
+
+backend - node server.js
+App runs at:
+http://localhost:5000
+
+📸 Screens Included
+
+Home dashboard (Weather preview)
+Forecast page (5-day weather)
+News page (headlines list)
+Profile page (unit settings)
+Responsive mobile layout
+
+🧠 Learning Outcomes
+
+API integration with React
+Handling asynchronous requests
+State management with hooks
+Routing using React Router
+Environment variables
+Component-based architecture
+Responsive UI development
+Error handling & loading states
+
+🚧 Future Improvements
+
+Auto GPS location detection
+Dark/Light mode
+Save favorite cities
+Bookmark news articles
+Push notifications
+Backend + database integration
+User authentication
+PWA support
+
+💡 Conclusion
+
+This Weather & News Dashboard demonstrates real-world API integration and modern frontend development practices.  
+By combining multiple APIs with multi-page routing and dynamic UI updates, it delivers a complete dashboard experience similar to production applications.
+The project highlights strong skills in React, REST API consumption, and building scalable, interactive web apps.
