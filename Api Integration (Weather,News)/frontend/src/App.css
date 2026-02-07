@@ -1,0 +1,580 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ================================================= */
+/* 🔹 EXISTING APP BACKGROUND (UNCHANGED) */
+/* ================================================= */
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+}
+
+.dark-bg {
+  background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+/* ================================================= */
+/* 🔥 OPENWEATHER STYLE HERO (HOME PAGE) */
+/* ================================================= */
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("https://images.unsplash.com/photo-1501973801540-537f08ccae7b");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+/* 🔥 MOVE CONTENT TO RIGHT */
+.hero-overlay {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 80px;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.95);
+  width: 380px;
+  border-radius: 22px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 0.6s ease-in-out;
+}
+
+.dark-bg .hero-card {
+  background: rgba(31, 41, 55, 0.95);
+  color: white;
+}
+
+.hero-card h1 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.hero-card p {
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.dark-bg .hero-card p {
+  color: #d1d5db;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================= */
+/* 🔹 WEATHER CARD (UNCHANGED) */
+/* ================================================= */
+.weather-container {
+  background: white;
+  padding: 30px;
+  width: 340px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.dark-bg .weather-container {
+  background: #1f2937;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mode-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================================================= */
+/* 🔹 SEARCH BOX (UNCHANGED) */
+/* ================================================= */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 0;
+}
+
+.search-box button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-box button:hover {
+  background: #4338ca;
+}
+
+.location-btn {
+  background: #6366f1;
+}
+
+.location-btn:hover {
+  background: #4f46e5;
+}
+
+.weather-info img {
+  width: 80px;
+}
+
+.loading {
+  color: #4f46e5;
+}
+
+.error {
+  color: red;
+}
+
+/* ================================================= */
+/* 🔹 NAV BAR (UPDATED VISIBILITY) */
+/* ================================================= */
+.nav {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  gap: 24px;
+  z-index: 100;
+}
+
+.nav a {
+  color: #000;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ================================================= */
+/* 🔹 PAGE + CARD (UNCHANGED) */
+/* ================================================= */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 340px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.dark-bg .card {
+  background: #1f2937;
+  color: white;
+}
+
+/* ================================================= */
+/* 🔹 PROFILE (UNCHANGED) */
+/* ================================================= */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-info p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.profile-actions button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-note {
+  font-size: 12px;
+  color: gray;
+}
+
+/* ================================================= */
+/* 🔹 FORECAST (UNCHANGED) */
+/* ================================================= */
+.forecast-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.forecast-card {
+  flex: 1;
+  background: #eef2ff;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+}
+
+.dark-bg .forecast-card {
+  background: #374151;
+}
+
+.forecast-card img {
+  width: 60px;
+  height: 60px;
+}
+
+.forecast-card .day {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.forecast-card .temp {
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.forecast-card .desc {
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+/* ================================================= */
+/* 🔥 NEW CHANGES — HERO STYLE FOR FORECAST PAGE */
+/* ================================================= */
+
+/* Apply hero background to all pages (forecast/dashboard) */
+.page {
+  width: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("https://images.unsplash.com/photo-1501973801540-537f08ccae7b");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fix forecast cards going outside */
+.forecast-container {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Keep cards evenly sized */
+.forecast-card {
+  flex: 1 1 120px;
+  max-width: 140px;
+}
+
+/* Better spacing inside main card */
+.card {
+  width: 420px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Dark mode glass card */
+.dark-bg .card {
+  background: rgba(31, 41, 55, 0.85);
+}
+
+/* ================================================= */
+/* 🔥 FORECAST ROW — HORIZONTAL WITHOUT SCROLL */
+/* ================================================= */
+
+.forecast-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 15px;
+  justify-content: space-between;
+  flex-wrap: nowrap;   /* keep in one row */
+  overflow: hidden;    /* remove scroll */
+}
+
+.forecast-card {
+  flex: 1 1 0;          /* cards shrink equally */
+  max-width: none;
+  min-width: 0;
+}
+
+/* ================================================= */
+/* 🔥 DASHBOARD BROADER */
+/* ================================================= */
+
+.card {
+  width: 560px;        /* wider dashboard */
+  max-width: 95%;
+}
+
+/* ================================================= */
+/* 🔥 FORECAST ICON CENTER FIX */
+/* ================================================= */
+
+.forecast-card img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 10px auto;   /* perfect horizontal center */
+}
+
+/* ================================================= */
+/* 🔥 MAKE WHITE ICONS VISIBLE */
+/* ================================================= */
+
+.forecast-card {
+  background: linear-gradient(
+      180deg,
+      #c7d2fe,
+      #e0e7ff
+  );
+}
+
+/* Dark mode contrast */
+.dark-bg .forecast-card {
+  background: linear-gradient(
+      180deg,
+      #374151,
+      #1f2937
+  );
+}
+
+/* ================================================= */
+/* 🔥 PROFILE PAGE PREMIUM LOOK */
+/* ================================================= */
+
+/* Bigger profile card */
+.profile-card {
+  gap: 16px;
+}
+
+/* Expand main card */
+.card {
+  width: 300px;
+  max-width: 95%;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.85),
+      rgba(255,255,255,0.65)
+  );
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Dark mode card */
+.dark-bg .card {
+  background: linear-gradient(
+      135deg,
+      rgba(31,41,55,0.9),
+      rgba(17,24,39,0.85)
+  );
+}
+
+/* Profile text spacing */
+.profile-info p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+/* Buttons look premium */
+.profile-actions button {
+  cursor: pointer;
+  font-weight: 300;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  transition: 0.25s;
+}
+
+.profile-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(79,70,229,0.4);
+}
+
+/* Footer note style */
+.profile-note {
+  margin-top: 12px;
+  opacity: 0.7;
+}
+
+/* ===============================
+   NEWS PAGE LAYOUT
+================================ */
+
+/* Make page content wider */
+.page .card {
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto 40px; /* below navbar */
+}
+
+/* News grid */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* News cards */
+.news-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.news-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.news-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.news-card a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* ===============================
+   HOME PAGE PERFECT CENTER FIX
+================================ */
+
+/* Full hero section center */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Overlay container */
+.hero-overlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Dashboard card */
+.hero-card {
+  width: 50%;
+  max-width: 1100px;
+  margin: 60px auto 0 auto; /* center horizontally */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+/* Dark mode */
+.dark-bg .hero-card {
+  background: rgba(40, 40, 40, 0.95);
+  color: white;
+}
+
+/* ===============================
+   WEATHER INFO STYLE FIX
+================================ */
+
+/* Weather info container */
+.weather-info p {
+  background: #c5c5f1;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+/* Dark mode */
+.dark-bg .weather-info p {
+  background: #3a3a3a;
+  color: white;
+}
+
+/* parent dashboard card (important for positioning) */
+.weather-dashboard {
+  position: relative;
+}
+
+/* target the moon + °F (top-right items container) */
+.top-right {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* make BOTH items boxed */
+.top-right span,
+.top-right button,
+.top-right div {
+  background: #cfd2ff;     /* same purple as your rows */
+  padding: 6px 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-weight: 600;
+  cursor: pointer;
+}
